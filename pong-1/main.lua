@@ -30,6 +30,8 @@ push = require 'push'
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
 
+
+-- SYD - Changing these to higher makes the game smaller but more HD, changing them to lower zooms in but makes it more blurry
 VIRTUAL_WIDTH = 432
 VIRTUAL_HEIGHT = 243
 
@@ -57,7 +59,7 @@ end
 ]]
 function love.keypressed(key)
     -- keys can be accessed by string name
-    if key == 'escape' then
+    if key == 'q' or key == 'escape' then
         -- function LÖVE gives us to terminate application
         love.event.quit()
     end
