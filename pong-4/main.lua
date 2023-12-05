@@ -119,7 +119,7 @@ end
 ]]
 function love.keypressed(key)
     -- keys can be accessed by string name
-    if key == 'escape' then
+    if key == 'escape' or key == 'q' then
         -- function LÖVE gives us to terminate application
         love.event.quit()
     -- if we press enter during the start state of the game, we'll go into play mode
@@ -153,15 +153,15 @@ function love.draw()
 
     -- clear the screen with a specific color; in this case, a color similar
     -- to some versions of the original Pong
-    love.graphics.clear(40/255, 45/255, 52/255, 255/255)
+    love.graphics.clear(70/255, 160/255, 126/255, 255/255)
 
     -- draw different things based on the state of the game
     love.graphics.setFont(smallFont)
 
     if gameState == 'start' then
-        love.graphics.printf('Hello Start State!', 0, 20, VIRTUAL_WIDTH, 'center')
+        love.graphics.printf('Press enter to play!', 0, 20, VIRTUAL_WIDTH, 'center')
     else
-        love.graphics.printf('Hello Play State!', 0, 20, VIRTUAL_WIDTH, 'center')
+        love.graphics.printf('Go!', 0, 20, VIRTUAL_WIDTH, 'center')
     end
 
     -- render first paddle (left side), now using the players' Y variable
