@@ -33,13 +33,14 @@ WINDOW_HEIGHT = 720
 VIRTUAL_WIDTH = 432
 VIRTUAL_HEIGHT = 243
 
+
 --[[
     Runs when the game first starts up, only once; used to initialize the game.
 ]]
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
-    -- more "retro-looking" font object we can use for any text
+    -- more "retro-looking" font object we can use for any text, number changes size to px
     smallFont = love.graphics.newFont('font.ttf', 8)
 
     -- set LÖVE2D's active font to the smallFont obect
@@ -75,10 +76,10 @@ function love.draw()
 
     -- clear the screen with a specific color; in this case, a color similar
     -- to some versions of the original Pong
-    love.graphics.clear(40/255, 45/255, 52/255, 255/255)
+    love.graphics.clear(70/255, 160/255, 126/255, 255/255) -- <-- This is a green ping pong table color
 
     -- draw welcome text toward the top of the screen
-    love.graphics.printf('Hello Pong!', 0, 20, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf('Hello, Sydney!', 0, 20, VIRTUAL_WIDTH, 'center')
 
     --
     -- paddles are simply rectangles we draw on the screen at certain points,
@@ -93,6 +94,8 @@ function love.draw()
 
     -- render ball (center)
     love.graphics.rectangle('fill', VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4, 4)
+
+    love.graphics.line(VIRTUAL_WIDTH / 2, 30, VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT - 30)
 
     -- end rendering at virtual resolution
     push:apply('end')
