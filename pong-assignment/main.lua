@@ -358,6 +358,9 @@ function love.draw()
         love.graphics.setLineWidth(3)
         love.graphics.line(20, VIRTUAL_HEIGHT / 2, VIRTUAL_WIDTH - 20, VIRTUAL_HEIGHT / 2 )
 
+        
+        ball:render()
+
     elseif gameState == 'done' then
         -- UI messages
         love.graphics.setFont(largeFont)
@@ -386,7 +389,7 @@ function love.draw()
     
     player1:render()
     player2:render()
-    ball:render()
+    
 
     -- display FPS for debugging; simply comment out to remove
     displayFPS()
